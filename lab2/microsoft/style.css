@@ -1,0 +1,219 @@
+body {
+    margin:0;
+    font-family: "Segoe UI", SegoeUI, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.main {
+    justify-content: center;
+    padding: 0px 5%;
+}
+.headers {
+    position:relative;
+}
+.leftheader {
+    float:left;
+    display: flex;
+    height:50px;
+}
+.rightheader {
+    float: right;
+    height:50px;
+}
+.mainlogo {
+    padding: 16px 6px 16px 10px;
+    width:108px;
+    display: flex;
+}
+
+.navbar {
+    float: left;
+    padding-left: 15px;
+    padding-right: 1px;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    padding: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    height: 48px;
+}
+li {
+    font-size: 13px;
+    border: 1px solid transparent;
+    color:rgb(38, 38, 38); 
+    margin-top: 1px;
+    display: inline-block;
+    padding: 20px 10px 10px;
+}
+a {
+    text-decoration: none;
+    color:rgb(38, 38, 38); 
+}
+.headers a:hover{
+    display: flex;
+    text-decoration: underline;
+}
+
+.newscon a:hover{
+    display: flex;
+    text-decoration: underline;
+}
+.actionbar {
+    float: right;
+    display: flex;
+}
+.products {
+    display: block;
+}
+
+.loginbutton {
+    justify-content: center;
+    display: flex;
+    position: relative;  
+}
+.logico {
+    background-image: url(../icons/login.svg);
+    background-position: 0 0;
+    background-size: 30px 30px;
+    height: 30px;
+    width: 30px;
+    margin-left: 8px;
+    margin-top: -7px;
+    position: relative;
+}
+.searchico {
+    background-image: url(../icons/search.ico);
+    background-position: 0 0;
+    background-size: 26px 26px;
+    height: 26px;
+    width: 26px;
+    margin-left: 2px;
+    margin-top: -6px;
+    position: relative;
+}
+.downico {
+    background-image: url(../icons/down.png);
+    background-position: 0 0;
+    background-size: 14px 14px;
+    height: 14px;
+    width: 14px;
+    margin-left: 4px;
+    margin-top: 1px;
+    position: relative;
+}
+
+.cover {
+    background-image: url(../img/RE4DRie.png);
+    background-position: 0 0;
+    background-size: 100%;
+    display:block;
+    width: 90%;
+    margin: 0px auto;
+    float: left;
+    margin-top: 10px;
+    padding:0px 5%;
+    background-color: #e6e6e6;
+}
+.paragraph {
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 400;
+    overflow: hidden;
+    max-height: 80px;
+    padding: 0;
+}
+.heading {
+    padding-top: 150px;
+    max-width: 500px;
+    padding-bottom: 150px;
+}
+.heading1 {
+    font-size: 34px;
+    line-height: 28px;
+    padding: 36px 0 4px;
+    max-height: 56px;
+    font-weight: bolder;
+    margin:0;
+}
+.coverimg {
+    height:360px;
+}
+.buttons {
+    padding-left: 0px;
+    margin-top: 24px;
+    font-weight: bold;
+    font-size: 15px;
+}
+.blackbutton {
+    margin-right: 24px;
+    color: #fff;
+    background: #000;
+    padding: 8px 20px 8px 20px;
+}
+#arrow {
+    font-weight:100;
+}
+
+.transbutton {
+    margin-right: 24px;
+    color:#000;
+    background: transparent;
+    padding: 8px 20px 8px 20px;
+}
+.newscon {
+    margin-left: -12px;
+    margin-right: -12px;
+    display:flex;
+    padding-bottom: 20%;
+}
+.news {
+    margin-left: 12px;
+    margin-right: 12px;
+    padding-left: 0;
+    padding-right: 0;
+    display:flexbox;
+}
+.leftcol {
+    float: left;
+}
+.rightcol {
+    float: right;
+}
+
+
+.col2, .col3, .col4 {  
+    padding-left: 34px;
+}
+.col1 , .col2, .col3, .col4 {
+    margin-top: 48px;
+    width: 23%;
+    float: left;
+}
+.newsimg {
+    width: 100%;
+}
+.newsparagraph {
+    padding-right: 12px;
+    padding-top: 2px;
+    margin:0;
+    font-size: 14px;
+    margin-top: -10px;
+    line-height: 22px;
+}
+.newsheading {
+    padding-right: 12px;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 600;
+    opacity: .95;
+    padding-top: 1px;
+    padding-bottom: 2px;
+    margin-top: 37px;
+    margin-bottom: 0;
+}
+.aboutbutton {
+    color:#0067b8;
+    font-weight: bold;
+    font-size: 14px;
+}

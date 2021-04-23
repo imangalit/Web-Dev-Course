@@ -1,0 +1,16 @@
+* {
+  margin: 40px;
+  margin-left: 60px;
+}
+.glyphicon {
+  color: #333;
+  cursor: pointer;
+}
+
+.liked {
+  color: green;
+}
+
+.disliked {
+  color: red;
+}

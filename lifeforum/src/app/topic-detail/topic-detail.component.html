@@ -1,0 +1,6 @@
+<div *ngIf="topic">
+  <h3>{{ topic.title }}</h3>
+  <div *ngFor="let post of posts">
+    <p><a routerLink="/posts/{{post.id}}" [post] = "post">{{post.title}}</a></p>
+  </div>
+</div>

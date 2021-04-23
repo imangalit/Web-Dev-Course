@@ -1,0 +1,9 @@
+<div id = popcont>
+  <h2>Popular topics</h2>
+  <div id = "pop"></div>
+  <div *ngFor="let topic of popTopics">
+    <ul><a routerLink="/topics/{{topic.id}}" [topic] = "topic">
+      {{ topic.title }}
+    </a></ul>
+  </div>
+</div>

@@ -1,16 +1,36 @@
 * {
+  margin-left: 60px;
+}
+.all {
   margin: 40px;
   margin-left: 60px;
+}
+div {
+  display: inline;
 }
 .glyphicon {
   color: #333;
   cursor: pointer;
 }
 
-.liked {
-  color: green;
+button {
+  width: 100px;
+  height: 40px;
+  border-radius: 5px;
+  border:none;
+  font-size: 16px;
 }
 
-.disliked {
-  color: red;
+.likebut {
+  color:black;
+  background-color:lightgreen;
+}
+
+.dislikebut {
+  color: white;
+  background-color:red;
+}
+
+.input {
+  margin-top: 30px;
 }

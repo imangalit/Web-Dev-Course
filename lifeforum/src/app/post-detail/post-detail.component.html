@@ -1,27 +1,24 @@
-<div *ngIf="post">
-  <h3>{{ post.title }}</h3>
-  <a>{{ post.text }}</a>
-
-  <span
-    class="glyphicon glyphicon glyphicon-heart"
-    [class.liked]="isActiveLike"
-    (click)="like()"
-    aria-hidden="true">Like</span>
-  &nbsp;
-  <span>{{ likesCount }}</span>
-
-  <span
-    class="glyphicon glyphicon glyphicon-heart"
-    [class.disliked]="isActiveDislike"
-    (click)="dislike()"
-    aria-hidden="true">Dislike</span>
-  &nbsp;
-  <span>{{ dislikesCount }}</span>
-  <input type="text" [(ngModel)]="text">
-  <p>{{text}}</p>
-  <button (click)="appendComment(text)">Comment</button>
-
-  <div *ngFor="let comment of comments">
-    {{comment}}
+<div class = "all">
+  <div *ngIf="post" class = "pop">
+    <h3>{{ post.title }}</h3>
+    <a>{{ post.text }}</a>
+    <br>
+    <br>
+    <br>
+    <button class = "likebut"
+      (click)="like()">Like</button>
+    &nbsp;
+    <div>{{ likesCount }}</div>
+    <button class = "dislikebut"
+      (click)="dislike()">Dislike</button>
+    &nbsp;
+    <div>{{ dislikesCount }}</div>
+    <br>
+    <input class = "input" type="text" [(ngModel)]="text">
+    <p>{{text}}</p>
+    <button (click)="appendComment(text)">Comment</button>
+    <div *ngFor="let comment of comments">
+      {{comment}}
+    </div>
   </div>
 </div>

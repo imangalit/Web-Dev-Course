@@ -22,6 +22,11 @@ export class LoginComponent implements OnInit {
       this.logged = true;
     }
   }
+
+  reload() {
+    window.location.reload();
+    window.location.href = 'http://localhost:4200/';
+  }
   login() {
     this.authService.login(this.username, this.password).subscribe((data) => {
 
@@ -30,7 +35,7 @@ export class LoginComponent implements OnInit {
 
       this.username = '';
       this.password = '';
-      this.router.navigate(['']);
+      this.reload();
     });
   }
   logout() {

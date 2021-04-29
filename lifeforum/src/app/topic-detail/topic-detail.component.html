@@ -1,6 +1,21 @@
-<div *ngIf="topic">
-  <h3>{{ topic.title }}</h3>
-  <div *ngFor="let post of posts">
-    <p><a routerLink="/posts/{{post.id}}" [post] = "post">{{post.title}}</a></p>
+<div id = popcont>
+  <div *ngIf="topic">
+    <h1>Topic: {{ topic.title }}</h1>
+    <p>Write a post</p>
+    <form>
+      <input type="text" placeholder="Post title">
+      <br>
+      <br>
+      <textarea placeholder="Your opinion.." style="height:200px; width: 500px"></textarea>
+      <br>
+      <br>
+      <button>Post</button>
+      <br>
+      <br>
+    </form>
+    <h3>Posts:</h3>
+    <div *ngFor="let post of posts">
+      <ul><a routerLink="/posts/{{post.id}}" [post] = "post">{{post.title}}</a></ul>
+    </div>
   </div>
 </div>

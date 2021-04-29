@@ -1,6 +1,6 @@
 import {Topics} from './interfaces';
 import {Posts} from './interfaces';
-
+import {User} from './interfaces';
 export const posts = [
   {
     userId: 1,
@@ -60,3 +60,11 @@ export const topics = [
     rating: 2
   },
 ];
+export const Users: User[] = [
+  {
+    firstName: 'zamira',
+    lastName: 'rystygul',
+    username: 'zamira',
+    password: '123456'
+  },
+]

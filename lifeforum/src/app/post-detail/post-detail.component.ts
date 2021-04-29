@@ -30,6 +30,7 @@ export class PostDetailComponent implements OnInit {
     this.post = posts.find(post => post.id === postIdFromRoute);
     this.likesCount = 0;
     this.dislikesCount = 0;
+    this.comments=[""];
     //this.comments.push("hello");
   }
   like() {

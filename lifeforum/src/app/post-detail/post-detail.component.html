@@ -17,8 +17,10 @@
     <input class = "input" type="text" [(ngModel)]="text">
     <p>{{text}}</p>
     <button (click)="appendComment(text)">Comment</button>
+    <h3>Comments:</h3>
     <div *ngFor="let comment of comments">
       {{comment}}
+      <br>
     </div>
   </div>
 </div>

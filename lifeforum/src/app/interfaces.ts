@@ -14,3 +14,18 @@ export interface Topics {
   rating: number;
   topicId: number;
 }
+export interface User {
+  username: string;
+  password: string;
+  firstName: string;
+  lastName: string;
+}
+export interface AuthToken {
+  token: string;
+}
+export interface User {
+  username: string;
+  password: string;
+  firstName: string;
+  lastName: string;
+}

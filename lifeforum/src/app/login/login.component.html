@@ -1,7 +1,13 @@
 <h1>Login</h1>
-<form>
-  <input type="text" id="username" placeholder="username">
-  <input type="text" id="password" placeholder="password">
-  <button>login</button>
-  <button>Register</button>
-</form>
+<div *ngIf="!logged">
+  <form>
+    <input type="text" id="username" placeholder="username" [(ngModel)]="username">
+    <input type="text" id="password" placeholder="password" [(ngModel)]="password">
+    <button (click)="login()">login</button>
+  </form>
+</div>
+
+<div *ngIf="logged">
+    <router-outlet></router-outlet>
+    <button (click)="logout()" class="logout">Logout</button>
+</div>

@@ -1,8 +1,27 @@
 * {
-  margin: 40px;
-  margin-left: 60px;
+  margin-left: 20px;
 }
-form {
-  margin:0px;
-  margin-left: 0px;
+.form{
+  margin: auto;
+  width: 400px;
+	height: 200px;
+	background: #fff;
+	border-radius: 5px;
+	padding: 15px;
+	box-shadow: -1px -1px 8px -1px rgba(0,0,0,0.52);
+	margin-bottom: 30px;
+}
+.form input{
+  margin: auto;
+	width: 85%;
+	height: 50px;
+	font-size: 17px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	padding: 0 15px;
+	margin-bottom: 15px;
+}
+
+h1{
+  margin-left: 700px;
 }

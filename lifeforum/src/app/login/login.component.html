@@ -1,11 +1,18 @@
 <h1>Login</h1>
-<div *ngIf="!logged">
-  <form>
-    <input type="text" id="username" placeholder="username" [(ngModel)]="username">
-    <input type="text" id="password" placeholder="password" [(ngModel)]="password">
-    <button (click)="login()">login</button>
-  </form>
-</div>
+<div class="first" *ngIf="!logged">
+  <div class="form">
+    <div class="input">
+      <input type="text" placeholder="Phone number, username, or email" class="in" [(ngModel)]="username">
+    </div>
+    <div class="input">
+      <input type="password" placeholder="Password" class="in" [(ngModel)]="password">
+    </div>
+    <div>
+      <button  (click)="login()">
+        Login
+      </button>
+    </div>
+  </div>
 
 <div *ngIf="logged">
     <router-outlet></router-outlet>

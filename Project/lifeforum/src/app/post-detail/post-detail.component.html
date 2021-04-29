@@ -1,0 +1,26 @@
+<div class = "all">
+  <div *ngIf="post" class = "pop">
+    <h3>{{ post.title }}</h3>
+    <a>{{ post.text }}</a>
+    <br>
+    <br>
+    <br>
+    <button class = "likebut"
+      (click)="like()">Like</button>
+    &nbsp;
+    <div>{{ likesCount }}</div>
+    <button class = "dislikebut"
+      (click)="dislike()">Dislike</button>
+    &nbsp;
+    <div>{{ dislikesCount }}</div>
+    <br>
+    <input class = "input" type="text" [(ngModel)]="text">
+    <p>{{text}}</p>
+    <button (click)="appendComment(text)">Comment</button>
+    <h3>Comments:</h3>
+    <div *ngFor="let comment of comments">
+      {{comment}}
+      <br>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<div id = popcont>
+  <h2>Topics</h2>
+  <div id = "pop"></div>
+  <div *ngFor="let topic of topics">
+    <ul><a routerLink="/topics/{{topic.id}}" [topic] = "topic">
+      {{ topic.title }}
+    </a></ul>
+  </div>
+  <form>
+    <br>
+    <br>
+    <input type="text" placeholder="Topic title">
+    <br>
+    <br>
+    <button>Create Topic</button>
+  </form>
+</div>

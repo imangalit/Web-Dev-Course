@@ -39,7 +39,6 @@ export class TopicDetailComponent implements OnInit {
       this.posts = data;
     });
   }
-
   newPost() {
     const post = {
       name: this.postTitle,
@@ -51,5 +50,6 @@ export class TopicDetailComponent implements OnInit {
     this.postService.createPost(post).subscribe((data) => {
       console.log(data);
     });
+    window.location.reload();
   }
 }

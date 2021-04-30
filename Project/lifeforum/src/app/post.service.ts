@@ -20,4 +20,7 @@ export class PostService {
   getComments(id): Observable<Comments[]> {
     return this.http.get<Comments[]>(`${this.BASE_URL}/api/commentsPostId/${id}`);
   }
+  createComment(comment: Comments): Observable<Comments[]> {
+    return this.http.post<Comments[]>(`${this.BASE_URL}/api/comments/`, comment);
+  }
 }

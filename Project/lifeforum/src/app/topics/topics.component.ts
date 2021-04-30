@@ -11,7 +11,7 @@ export class TopicsComponent implements OnInit {
   topics: Topics[] = [];
   topicTitle: string = '';
   logged = false;
-  
+
   constructor(private topicService: TopicService) { }
   ngOnInit(): void {
     this.getTopics();
@@ -25,6 +25,7 @@ export class TopicsComponent implements OnInit {
     this.topicService.createTopic(topic).subscribe((data) => {
       console.log(data);
     });
+    window.location.reload();
   }
   getTopics() {
     this.topicService.getTopics().subscribe((data) => {

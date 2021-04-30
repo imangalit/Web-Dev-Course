@@ -52,8 +52,16 @@ export class PostDetailComponent implements OnInit {
     this.dislikesCount += (this.isActiveDislike) ? -1 : 1;
     this.isActiveDislike = !this.isActiveDislike;
   }
-  appendComment(comment): void {
-    this.comments.push(comment);
+  appendComment(desc) {
+    const comment = {
+      description: desc,
+      post_id: this.post.id,
+      id: undefined
+    };
+    console.log(this.post.id);
+    this.postService.createComment(comment).subscribe((data) => {
+      console.log(data);
+    });
+    window.location.reload();
   }
-
 }

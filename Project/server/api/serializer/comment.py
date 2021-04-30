@@ -4,9 +4,9 @@ from api.models import Comment
 
 
 class CommentSerializer(serializers.Serializer):
-    id = serializers.IntegerField()
+    id = serializers.IntegerField(read_only=True)
     description = serializers.CharField()
-    postid = serializers.IntegerField()
+    post_id = serializers.IntegerField(read_only=True)
 
     def create(self, data):
         comment = Comment.objects.create(description=data.get(['description']))
@@ -14,5 +14,6 @@ class CommentSerializer(serializers.Serializer):
 
     def update(self, instance, data):
         instance.description = data.get['description']
+        instance.post_id = data.get('post_id')
         instance.save()
         return instance

@@ -8,11 +8,18 @@ from rest_framework.request import Request
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 
-@api_view(['GET', 'POST'])
+@api_view(['GET'])
 def PostsTopicId(request, topic_id):
     if request.method == 'GET':
         categories = Post.objects.filter(topic_id = topic_id).order_by('-id')
         serializer = PostSerializer(categories, many=True)
+        return Response(serializer.data)
+
+@api_view(['GET'])
+def CommentsPostId(request, post_id):
+    if request.method == 'GET':
+        categories = Comment.objects.filter(post_id = post_id).order_by('-id')
+        serializer = CommentSerializer(categories, many=True)
         return Response(serializer.data)
 
 class TopicListAPIView(generics.ListCreateAPIView):
@@ -41,3 +48,4 @@ class PostDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
     permission_classes = [IsAuthenticated]
+

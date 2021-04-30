@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs/internal/Observable';
-import {Posts, Topics} from './interfaces';
+import {Comments, Posts, Topics} from './interfaces';
 @Injectable({
   providedIn: 'root'
 })
@@ -16,5 +16,8 @@ export class PostService {
   }
   getPostsByTopic(id): Observable<Posts[]>{
     return this.http.get<Posts[]>(`${this.BASE_URL}/api/postsTopicId/${id}`);
+  }
+  getComments(id): Observable<Comments[]> {
+    return this.http.get<Comments[]>(`${this.BASE_URL}/api/commentsPostId/${id}`);
   }
 }

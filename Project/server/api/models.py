@@ -20,7 +20,7 @@ class Topic(models.Model):
 class Post(models.Model):
     name = models.CharField(max_length=200, verbose_name='Название')
     description = models.TextField(verbose_name='Description')
-    topic = models.ForeignKey(Topic,related_name="posts",on_delete=models.CASCADE)
+    topic = models.ForeignKey(Topic,related_name="posts", on_delete=models.CASCADE)
 
     def __str__(self):
         return f'{self.id} : {self.name} : {self.topic.to_json()}'

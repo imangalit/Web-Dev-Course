@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
 
   reload() {
     window.location.reload();
-    window.location.href = 'http://localhost:4200/';
+    window.location.href = 'http://localhost:4200/home  ';
   }
   login() {
     this.authService.login(this.username, this.password).subscribe((data) => {

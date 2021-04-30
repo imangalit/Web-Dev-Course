@@ -5,6 +5,10 @@ export interface Posts {
   name: string;
   topicId: number;
 }
+export interface Comments {
+  id: number;
+  description: string;
+}
 
 export interface Topics {
   id: number;

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import {PostService} from '../post.service';
-import {Posts} from '../interfaces';
+import {Posts, Comments} from '../interfaces';
 
 @Component({
   selector: 'app-post-detail',
@@ -12,7 +12,7 @@ export class PostDetailComponent implements OnInit {
   post;
   posts: Posts[] = [];
   text: string = '';
-  comments: string[];
+  comments: Comments[] = [];
 
   likesCount: number;
   isActiveLike: boolean;
@@ -28,14 +28,19 @@ export class PostDetailComponent implements OnInit {
     this.getPosts();
     this.likesCount = 0;
     this.dislikesCount = 0;
-    this.comments=[""];
   }
-
+  getComments(id) {
+    this.postService.getComments(id).subscribe((data) => {
+      this.comments = data;
+      console.log(this.comments);
+    });
+  }
   getPosts(): void {
     this.postService.getPosts().subscribe((data) => {
       this.posts = data;
       this.post = this.posts.find(post => post.id === Number(this.route.snapshot.paramMap.get('postId')));
       console.log(this.post);
+      this.getComments(this.post.id);
     });
   }
 

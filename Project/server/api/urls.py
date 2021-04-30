@@ -12,5 +12,6 @@ urlpatterns = [
     path('posts/<int:pk>/', PostDetailAPIView.as_view()),
 
     path('postsTopicId/<int:topic_id>/', PostsTopicId),
+    path('commentsPostId/<int:post_id>/', CommentsPostId),
 
 ]

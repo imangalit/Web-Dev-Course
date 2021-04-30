@@ -3,7 +3,7 @@ export interface Posts {
   id: number;
   description: string;
   name: string;
-  topicId: number;
+  topic_id: number;
 }
 export interface Comments {
   id: number;

@@ -44,9 +44,10 @@ export class TopicDetailComponent implements OnInit {
     const post = {
       name: this.postTitle,
       description: this.postText,
-      topicId: this.topic.id,
+      topic_id: this.topic.id,
       id: undefined
     };
+
     this.postService.createPost(post).subscribe((data) => {
       console.log(data);
     });

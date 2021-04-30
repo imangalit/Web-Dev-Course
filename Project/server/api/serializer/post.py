@@ -8,10 +8,10 @@ class PostSerializer(serializers.Serializer):
     id = serializers.IntegerField(read_only=True)
     name = serializers.CharField()
     description = serializers.CharField()
-    topic_id = serializers.IntegerField(read_only=True)
+    topic_id = serializers.IntegerField()
 
     def create(self, data):
-        post = Post.objects.create(name=data.get('name'))
+        post = Post.objects.create(name=data.get('name'), topic_id = data.get('topic_id'), description = data.get('description'))
         return post
 
     def update(self, instance, data):

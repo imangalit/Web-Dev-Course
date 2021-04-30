@@ -1,11 +1,11 @@
 <div class = "leftheader">
-  <h3 id = "logo"><a routerLink="/">LifeForum</a></h3>
+  <h3 id = "logo"><a routerLink="/home">LifeForum</a></h3>
   <nav>
     <ul class = "appul"><a routerLink="/topics"> Topics </a></ul>
     <ul class = "appul"><a routerLink="/posts"> Posts </a></ul>
     <ul class = "appuk">
       <div *ngIf="!logged">
-      <a routerLink="/login"> Login </a>
+      <a routerLink="/"> Login </a>
       </div>
       <div *ngIf="logged">
           <button (click)="logout()" class="logout">Logout</button>

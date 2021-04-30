@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {PostService} from '../post.service';
-import {posts} from '../database';
+import {Posts, Topics} from '../interfaces';
+import {TopicService} from '../topic.service';
 
 @Component({
   selector: 'app-posts',
@@ -8,14 +9,14 @@ import {posts} from '../database';
   styleUrls: ['./posts.component.css']
 })
 export class PostsComponent implements OnInit {
-  latestTopics;
+  posts: Posts[] = [];
   constructor(private postService: PostService) { }
-
   ngOnInit(): void {
-    this.getLatest();
+    this.getPosts();
   }
-
-  getLatest(): void {
-    this.latestTopics = this.postService.getLatest();
+  getPosts() {
+    this.postService.getPosts().subscribe((data) => {
+      this.posts = data;
+    });
   }
 }

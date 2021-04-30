@@ -1,9 +1,16 @@
 <div id = popcont>
   <h2>Popular topics</h2>
   <div id = "pop"></div>
-  <div *ngFor="let topic of popTopics">
+  <div *ngFor="let topic of topics">
     <ul><a routerLink="/topics/{{topic.id}}" [topic] = "topic">
       {{ topic.title }}
+    </a></ul>
+  </div>
+  <h2>Popular posts</h2>
+  <div id = "pop"></div>
+  <div *ngFor="let post of posts">
+    <ul><a routerLink="/topics/{{post.id}}" [post] = "post">
+      {{ post.name }}
     </a></ul>
   </div>
 </div>

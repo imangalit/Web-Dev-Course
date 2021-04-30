@@ -1,8 +1,8 @@
 <div id = "pop">
   <h2>Latest Posts</h2>
-  <div *ngFor="let post of latestTopics">
-    <ul><a routerLink="/posts/{{post.id}}" [post] = "post">
-      {{ post.title }}
+  <div *ngFor="let post of posts">
+    <ul><a routerLink="/posts/{{post.id}}">
+      {{ post.name }}
     </a></ul>
   </div>
 </div>

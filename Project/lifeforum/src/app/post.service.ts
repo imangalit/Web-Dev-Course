@@ -1,16 +1,20 @@
 import { Injectable } from '@angular/core';
-import {posts} from './database';
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs/internal/Observable';
+import {Posts, Topics} from './interfaces';
 @Injectable({
   providedIn: 'root'
 })
 export class PostService {
-  constructor() { }
-  getPostByCategory(topicId): any{
-    const res = posts.filter(post => post.topicId === topicId);
-    return res;
+  BASE_URL = 'http://localhost:8000';
+  constructor(private http: HttpClient) { }
+  getPosts(): Observable<Posts[]> {
+    return this.http.get<Posts[]>(`${this.BASE_URL}/api/posts`);
   }
-  getLatest(): any{
-    const res = posts;
-    return res;
+  createPost(post: Posts): Observable<Posts[]> {
+    return this.http.post<Posts[]>(`${this.BASE_URL}/api/posts/`, post);
+  }
+  getPostsByTopic(id): Observable<Posts[]>{
+    return this.http.get<Posts[]>(`${this.BASE_URL}/api/postsTopicId/${id}`);
   }
 }

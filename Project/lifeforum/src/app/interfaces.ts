@@ -1,18 +1,14 @@
 
 export interface Posts {
-  userId: number;
   id: number;
-  title: string;
-  rating: number;
+  description: string;
+  name: string;
   topicId: number;
 }
 
 export interface Topics {
-  userId: number;
   id: number;
   title: string;
-  rating: number;
-  topicId: number;
 }
 export interface User {
   username: string;
@@ -22,6 +18,7 @@ export interface User {
 }
 export interface AuthToken {
   token: string;
+  expires: number;
 }
 export interface User {
   username: string;

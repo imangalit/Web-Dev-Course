@@ -17,12 +17,12 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 
 const appRoutes: Routes = [
-  {path: '', component: HomeComponent},
+  {path: 'home', component: HomeComponent},
   {path: 'topics', component: TopicsComponent},
   {path: 'topics/:topicId', component: TopicDetailComponent},
   {path: 'posts/:postId', component: PostDetailComponent},
   {path: 'posts', component: PostsComponent},
-  {path: 'login', component: LoginComponent},
+  {path: '', component: LoginComponent},
 ]
 
 @NgModule({

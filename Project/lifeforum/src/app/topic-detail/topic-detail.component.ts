@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { topics } from '../database';
 import { PostService } from '../post.service';
+import {Posts, Topics} from '../interfaces';
+import {TopicService} from '../topic.service';
 
 @Component({
   selector: 'app-topic-detail',
@@ -10,21 +11,44 @@ import { PostService } from '../post.service';
 })
 
 export class TopicDetailComponent implements OnInit {
+  topics: Topics[] = [];
   topic;
-  posts;
+  posts: Posts[] = [];
+  postTitle: string = '';
+  postText: string = '';
+
   constructor(
     private route: ActivatedRoute,
     private postService: PostService,
+    private topicService: TopicService,
   ) { }
 
   ngOnInit() {
-    const routeParams = this.route.snapshot.paramMap;
-    const topicIdFromRoute = Number(routeParams.get('topicId'));
     // Find the product that correspond with the id provided in route.
-    this.topic = topics.find(topic => topic.id === topicIdFromRoute);
-    this.getPosts();
+    this.getTopics();
   }
-  getPosts(): void {
-    this.posts = this.postService.getPostByCategory(this.topic.id);
+  getTopics() {
+    this.topicService.getTopics().subscribe((data) => {
+      this.topics = data;
+      this.topic = this.topics.find(topic => topic.id === Number(this.route.snapshot.paramMap.get('topicId')));
+      this.getPostsByTopic(this.topic.id);
+    });
+  }
+  getPostsByTopic(id) {
+    this.postService.getPostsByTopic(id).subscribe((data) => {
+      this.posts = data;
+    });
+  }
+
+  newPost() {
+    const post = {
+      name: this.postTitle,
+      description: this.postText,
+      topicId: this.topic.id,
+      id: undefined
+    };
+    this.postService.createPost(post).subscribe((data) => {
+      console.log(data);
+    });
   }
 }

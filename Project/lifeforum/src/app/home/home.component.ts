@@ -1,22 +1,31 @@
 import { Component, OnInit } from '@angular/core';
-import {topics} from '../database';
 
 import { TopicService } from '../topic.service';
+import {Topics, Posts} from '../interfaces';
+
+import {PostService} from '../post.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  topics = topics;
-  popTopics;
-  constructor(private topicService: TopicService) { }
-
+  topics: Topics[] = [];
+  posts: Posts[] = [];
+  constructor(private topicService: TopicService, private postService: PostService) { }
   ngOnInit(): void {
-    this.getPop()
-  }
+    this.getTopics();
+    this.getPosts();
 
-  getPop(): void {
-    this.popTopics = this.topicService.getPop();
+  }
+  getPosts() {
+    this.postService.getPosts().subscribe((data) => {
+      this.posts = data;
+    });
+  }
+  getTopics() {
+    this.topicService.getTopics().subscribe((data) => {
+      this.topics = data;
+    });
   }
 }

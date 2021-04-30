@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {posts} from '../database';
 import { ActivatedRoute } from '@angular/router';
 import {PostService} from '../post.service';
+import {Posts} from '../interfaces';
 
 @Component({
   selector: 'app-post-detail',
@@ -10,6 +10,7 @@ import {PostService} from '../post.service';
 })
 export class PostDetailComponent implements OnInit {
   post;
+  posts: Posts[] = [];
   text: string = '';
   comments: string[];
 
@@ -24,15 +25,20 @@ export class PostDetailComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    const routeParams = this.route.snapshot.paramMap;
-    const postIdFromRoute = Number(routeParams.get('postId'));
-    // Find the product that correspond with the id provided in route.
-    this.post = posts.find(post => post.id === postIdFromRoute);
+    this.getPosts();
     this.likesCount = 0;
     this.dislikesCount = 0;
     this.comments=[""];
-    //this.comments.push("hello");
   }
+
+  getPosts(): void {
+    this.postService.getPosts().subscribe((data) => {
+      this.posts = data;
+      this.post = this.posts.find(post => post.id === Number(this.route.snapshot.paramMap.get('postId')));
+      console.log(this.post);
+    });
+  }
+
   like() {
     this.likesCount += (this.isActiveLike) ? -1 : 1;
     this.isActiveLike = !this.isActiveLike;
